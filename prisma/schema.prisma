@@ -14,15 +14,15 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
+  id        Int      @id @default(autoincrement()) // user id will be unique
   name      String
-  email     String   @unique
+  email     String   @unique   // add zod for 
   mobile    String   @unique
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  expenses    Expense[] // A user can create many expenses
+  expenses    Expense[] 
   Participant Participant[]
 }
 
